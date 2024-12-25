@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TORPEDO</title>
+    <link rel="stylesheet" href="./static/css/mystyle.css" />
+   
+
+</head>
+
+<body>
+   <h1>VERIFIADOR DE DATOS DE SKU</h1>
+   <label for="sku-select">DETALLES DEL PRODUCTO</label>
+   <input list="sku-list" id="sku-select" name="sku-select">
+   <datalist id="sku-list"></datalist>
+   <button id="clear-button" onclick= "clearSkuDetails()">BORRAR</button>
+
+   <div id="sku-details">
+       <p id="sku"></p>
+       <p id="dv"></p>
+       <p id="nombre"></p>
+       <p id="alergeno"></p>
+       <p id="rotacion"></p>
+       <p id="estiba"></p>
+   </div>
+
+</body>
+
+</html>
+<script src="./static/js/main.js"></script>
+
+<!-- Developer: Nelson Siu nsiu@grupocargo.com -->
+
+
