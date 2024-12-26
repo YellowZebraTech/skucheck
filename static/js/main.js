@@ -1,5 +1,5 @@
-// Developer: Nelson Siu nsiu@grupocargo.com
-// JSON load 'https://raw.githubusercontent.com/cargoaidev/reception/main/sku/sku.json'
+// Developer: Siu engineer.siu@gmail.com
+
 
 let skuData = [];  
 
@@ -8,9 +8,9 @@ async function jsonLoad() {
    try {
          const response = await fetch('https://raw.githubusercontent.com/cargoaidev/reception/main/sku/sku.json');
          if (!response.ok) {
-            throw new Error('Network response was not ok');
+            throw new Error('trate nuevamente');
          }
-         skuData = await response.json(); // Store the JSON data globally
+         skuData = await response.json(); 
          console.log('JSON data loaded:', skuData);
          skuOptions();
    } catch (error) {
