@@ -11,7 +11,7 @@ body {
    height: 100vh;
 }
 
-h1, h4,label, input, button  {
+h1, h4, label, input, button {
    font-size: 1rem;
    text-align: center;
    margin: 5px 0;
@@ -23,25 +23,23 @@ h1, h4,label, input, button  {
    padding: 5px;
 }
 
-
-
 input {
    margin-bottom: 2px;
    padding: 2px;
    width: 95%;
    box-sizing: border-box;
-   font-size: 3vh;
+   font-size: 1rem;
 }
 
 .table-container {
    width: 95%;
    max-height: 1000px;
    overflow-y: auto;
+   overflow-x: auto; /* Add horizontal scrolling */
    margin-top: 5px;
    border: 1px solid #ccc;
    font-size: 1rem;
 }
-
 
 #sku-table {
    width: 100%;
@@ -60,7 +58,7 @@ input {
    background-color: #0c0000;
    z-index: 1;
    text-transform: uppercase;
-   color: rgb(255, 255, 255);
+   color: #fff;
 }
 
 #sku-table tbody tr:nth-child(even) {
@@ -68,7 +66,7 @@ input {
 }
 
 #sku-table tbody tr:hover {
-   background-color: #f1f1f1;
+   background-color: #dbdcb8;
 }
 
 button {
@@ -84,3 +82,20 @@ button:hover {
    background-color: #0033ff;
 }
 
+@media (max-width: 600px) {
+   body {
+      font-size: 0.8rem;
+   }
+
+   input {
+      font-size: 2vh;
+   }
+
+   .table-container {
+      font-size: 0.8rem;
+   }
+
+   #sku-table th, #sku-table td {
+      padding: 3px;
+   }
+}
