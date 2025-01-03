@@ -45,9 +45,9 @@ function renderTable(filteredData) {
         row.innerHTML = `
             <td>${sku}</td>
             <td>${dv}</td>
-            <td>${nombre}</td>            
-            <td>${rotacion || "No especificado"}</td>
+            <td>${nombre}</td>          
             <td>${estiba || "No especificada"}</td>
+            <td>${rotacion || "No especificado"}</td>
             <td>${alergeno || "No especificado"}</td>
         `;
         tableBody.appendChild(row);
