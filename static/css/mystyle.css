@@ -12,13 +12,13 @@ body {
 }
 
 h1, h4,label, input, button  {
+   font-size: 1rem;
    text-align: center;
    margin: 5px 0;
    font-weight: bold;
 }
 
-.note {
-   font-size: 12px;
+.note {   
    background-color: yellow;
    padding: 5px;
 }
@@ -36,9 +36,10 @@ input {
 .table-container {
    width: 95%;
    max-height: 1000px;
-   overflow-y: auto; /* Enable vertical scrolling */
+   overflow-y: auto;
    margin-top: 5px;
    border: 1px solid #ccc;
+   font-size: 1rem;
 }
 
 

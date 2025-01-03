@@ -33,7 +33,7 @@ function populateDatalist(data) {
 // Render table with filtered data
 function renderTable(filteredData) {
     const tableBody = document.getElementById('sku-table-body');
-    tableBody.innerHTML = ''; // Clear existing rows
+    tableBody.innerHTML = ''; 
 
     if (filteredData.length === 0) {
         tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center;">ESCRIBISTE MAL O NO EXISTE</td></tr>`;
@@ -57,7 +57,7 @@ function renderTable(filteredData) {
 // Filter and display matching SKUs based on input
 document.getElementById('sku-select').addEventListener('input', function () {
     const searchTerm = this.value.toLowerCase().trim();
-    const searchTerms = searchTerm.split(/\s+/); // Split input into words
+    const searchTerms = searchTerm.split(/\s+/); 
 
     const filteredData = skuData.filter(item => {
         const skuName = `${item.nombre} - SKU: ${item.sku}`.toLowerCase();
@@ -70,7 +70,7 @@ document.getElementById('sku-select').addEventListener('input', function () {
 // Clear input and reset table
 function clearSkuDetails() {
     document.getElementById('sku-select').value = '';
-    renderTable(skuTable); // Reset table to show all data
+    renderTable(skuTable);
 }
 
 // Initialize on page load
