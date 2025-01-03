@@ -1,26 +1,85 @@
-
 /* Developer: Siu engineer.siu@gmail.com */
 
-* { padding: 0;
-  margin: 0;
-}
-
 body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
    display: flex;
    flex-direction: column;
    align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
    height: 100vh;
-   font-size: 20px; 
-   text-align: center;
-   margin: 0;
 }
 
-h1, label, input, button, div {
-   margin: 10px 0;
+h1, h4,label, input, button  {
+   text-align: center;
+   margin: 5px 0;
+   font-weight: bold;
 }
 
 .note {
-   font-size: 10px;
-   background-color: yellow; 
+   font-size: 12px;
+   background-color: yellow;
+   padding: 5px;
 }
+
+
+
+input {
+   margin-bottom: 2px;
+   padding: 2px;
+   width: 95%;
+   box-sizing: border-box;
+   font-size: 3vh;
+}
+
+.table-container {
+   width: 95%;
+   max-height: 1000px;
+   overflow-y: auto; /* Enable vertical scrolling */
+   margin-top: 5px;
+   border: 1px solid #ccc;
+}
+
+
+#sku-table {
+   width: 100%;
+   border-collapse: collapse;
+}
+
+#sku-table th, #sku-table td {
+   border: 1px solid #ddd;
+   padding: 5px;
+   text-align: center;
+}
+
+#sku-table th {
+   position: sticky;
+   top: 0;
+   background-color: #0c0000;
+   z-index: 1;
+   text-transform: uppercase;
+   color: rgb(255, 255, 255);
+}
+
+#sku-table tbody tr:nth-child(even) {
+   background-color: #f9f9f9;
+}
+
+#sku-table tbody tr:hover {
+   background-color: #f1f1f1;
+}
+
+button {
+   padding: 5px 20px;
+   background-color: #ff0000;
+   color: white;
+   border: none;
+   cursor: pointer;
+   border-radius: 5px;
+}
+
+button:hover {
+   background-color: #0033ff;
+}
+

@@ -6,17 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TORPEDO</title>
     <link rel="stylesheet" href="./static/css/mystyle.css" />
-   
-
 </head>
 
 <body>
    <h1>VERIFICADOR DE DATOS DE SKU</h1>
    <h4 class="note">VERSION DE PRUEBA</h4>
+   
+   <!-- Input for SKU Selection -->
    <label for="sku-select">DESCRIBA EL PRODUCTO</label>
-   <input list="sku-list" id="sku-select" name="sku-select">
+   <input list="sku-list" id="sku-select" name="sku-select" />
    <datalist id="sku-list"></datalist>
-   <button id="clear-button" onclick= "clearSkuDetails()">BORRAR</button>
+   
+   <!-- Clear Button -->
+   <button id="clear-button" onclick="clearSkuDetails()">BORRAR</button>
+
+   <!-- SKU Details Table -->
+   <div class="table-container">
+       <table id="sku-table">
+           <thead>
+               <tr>
+                   <th>SKU</th>
+                   <th>DV</th>
+                   <th>Nombre</th>
+                   <th>Alérgeno</th>
+                   <th>Rotación</th>
+                   <th>Estiba</th>
+               </tr>
+           </thead>
+           <tbody id="sku-table-body"></tbody>
+       </table>
+   </div>
 
    <div id="sku-details">
        <p id="sku"></p>
@@ -27,11 +46,6 @@
        <p id="estiba"></p>
    </div>
 
+   <script src="./static/js/main.js"></script>
 </body>
-
 </html>
-<script src="./static/js/main.js"></script>
-
-
-
-
