@@ -44,8 +44,8 @@ function renderTable(filteredData) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${sku}</td>
-            <td>${dv}</td>
-            <td>${nombre}</td>          
+            <td>${nombre}</td>
+            <td>${dv}</td>                      
             <td>${estiba || "No especificada"}</td>
             <td>${rotacion || "No especificado"}</td>
             <td>${alergeno || "No especificado"}</td>
