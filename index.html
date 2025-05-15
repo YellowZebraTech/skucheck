@@ -11,7 +11,7 @@
 <body>
          
    <!-- Input for SKU Selection -->
-   <label for="sku-select">VERIFICADOR DE SKU - VERSIÓN 1.2 (MAYO 01 2025)</label>
+   <label for="sku-select">VERIFICADOR DE SKU - VERSIÓN 1.2 (MAYO 15, 2025)</label>
    <div class="input-container">
        <input list="sku-list" id="sku-select" name="sku-select" placeholder="DESCRIBA EL PRODUCTO ACÁ"/>
        <button id="clear-button" onclick="clearSkuDetails()">BORRAR</button>
@@ -25,6 +25,7 @@
                <tr>
                    <th>SKU</th>                   
                    <th>Nombre</th> 
+                   <th>APILABILIDAD</th> 
                    <th>DV</th>
                    <th>Estiba</th>                  
                    <th>Rotación</th>                   
@@ -38,6 +39,7 @@
    <div id="sku-details">
        <p id="sku"></p>       
        <p id="nombre"></p> 
+       <p id="apilabilidad"></p>
        <p id="dv"></p>
        <p id="estiba"></p>      
        <p id="rotacion"></p>       

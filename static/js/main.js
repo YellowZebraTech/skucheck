@@ -40,11 +40,12 @@ function renderTable(filteredData) {
         return;
     }
 
-    filteredData.forEach(({ sku, dv, nombre, alergeno, rotacion, estiba }) => {
+    filteredData.forEach(({ sku, dv, nombre,apilabilidad, alergeno, rotacion, estiba }) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${sku}</td>
             <td>${nombre}</td>
+            <td>${apilabilidad}</td>
             <td>${dv}</td>                      
             <td>${estiba || "No especificada"}</td>
             <td>${rotacion || "No especificado"}</td>
