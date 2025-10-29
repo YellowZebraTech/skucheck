@@ -6,7 +6,7 @@ let skuTable = [];
 // Fetch and load JSON data
 async function jsonLoad() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/cargoaidev/reception/main/sku/sku.json');
+        const response = await fetch('https://cdn.jsdelivr.net/gh/cargoaidev/reception@main/sku/sku.json');
         if (!response.ok) throw new Error('Refresque la página');
         skuData = await response.json();
         console.log('JSON data loaded:', skuData);
@@ -25,7 +25,8 @@ function populateDatalist(data) {
     skuList.innerHTML = ''; // Clear previous entries
     data.forEach(item => {
         const option = document.createElement('option');
-        option.value = `${item.nombre} - SKU: ${item.sku}`;
+        // Convert sku to string to ensure proper matching
+        option.value = `${item.nombre} - SKU: ${item.sku.toString()}`;
         skuList.appendChild(option);
     });
 }
@@ -36,20 +37,20 @@ function renderTable(filteredData) {
     tableBody.innerHTML = ''; 
 
     if (filteredData.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="6" style="text-align:center;">ESCRIBISTE MAL O NO EXISTE</td></tr>`;
+        tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center;">ESCRIBISTE MAL O NO EXISTE</td></tr>`;
         return;
     }
 
-    filteredData.forEach(({ sku, dv, nombre,apilabilidad, alergeno, rotacion, estiba }) => {
+    filteredData.forEach(item => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${sku}</td>
-            <td>${nombre}</td>
-            <td>${apilabilidad}</td>
-            <td>${dv}</td>                      
-            <td>${estiba || "No especificada"}</td>
-            <td>${rotacion || "No especificado"}</td>
-            <td>${alergeno || "No especificado"}</td>
+            <td>${item.sku}</td>
+            <td>${item.nombre}</td>
+            <td>${item.apilabilidad}</td>
+            <td>${item.dv}</td>                      
+            <td>${item.estiba || "No especificada"}</td>
+            <td>${item.rotacion || "No especificado"}</td>
+            <td>${item.alergeno || "No especificado"}</td>
         `;
         tableBody.appendChild(row);
     });
@@ -58,11 +59,21 @@ function renderTable(filteredData) {
 // Filter and display matching SKUs based on input
 document.getElementById('sku-select').addEventListener('input', function () {
     const searchTerm = this.value.toLowerCase().trim();
+    
+    // If empty, show all data
+    if (searchTerm === '') {
+        renderTable(skuTable);
+        return;
+    }
+
     const searchTerms = searchTerm.split(/\s+/); 
 
     const filteredData = skuData.filter(item => {
-        const skuName = `${item.nombre} - SKU: ${item.sku}`.toLowerCase();
-        return searchTerms.every(term => skuName.includes(term));
+        const skuString = item.sku.toString().toLowerCase();
+        const nombreString = item.nombre.toLowerCase();
+        const searchString = `${nombreString} ${skuString}`;
+        
+        return searchTerms.every(term => searchString.includes(term));
     });
 
     renderTable(filteredData);
